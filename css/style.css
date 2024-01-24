@@ -4,7 +4,9 @@
     background-image: url("../images/black.gif");
     overflow: auto;
     display: block;
-    margin: 0
+    margin: 0;
+    text-rendering: optimizeLegibility;
+    image-rendering: pixelated;
  }
 
 
@@ -18,15 +20,6 @@
     margin: 0 auto;
  }
 
- .left-box {
-    width: 100px;
-    height: 100px;
- }
-
- .right-box {
-    width: 100px;
-    height: 100px;
- }
 
  .spanbox {
     span {
@@ -155,35 +148,45 @@
     margin: 0 auto;
     display: grid;
     grid-template-rows: repeat(1, 1fr);
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(1, 1fr); 
+    gap: 1rem;
     justify-items: center;
-    gap: 5rem;
 
  }
-
- @media screen and (max-width: 1200px) {
-    .grid { grid-template-columns: repeat(1, 1fr); gap: 1rem;}
-    .window { width: 200px;}
-    .pills { width: 100px;}
-  }
 
  .window {
-    background: #ece9d8;
-    width: 600px;
-    height: auto;
-    position: relative;
-    font-size: 11px;
-    box-shadow: inset -1px -1px #00138c,inset 1px 1px #0831d9,inset -2px -2px #001ea0,inset 2px 2px #166aee,inset -3px -3px #003bda,inset 3px 3px #0855dd;
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
-    padding: 0 0 3px;
-    -webkit-font-smoothing: antialiased;
+   background: #ece9d8;
+   width: 600px;
+   height: auto;
+   position: relative;
+   font-size: 11px;
+   box-shadow: inset -1px -1px #00138c,inset 1px 1px #0831d9,inset -2px -2px #001ea0,inset 2px 2px #166aee,inset -3px -3px #003bda,inset 3px 3px #0855dd;
+   border-top-left-radius: 8px;
+   border-top-right-radius: 8px;
+   padding: 0 0 3px;
+   -webkit-font-smoothing: antialiased;
 
-    iframe {
-        width: 500px;
-        height: 280px;
-    }
+   iframe {
+       width: 500px;
+       height: 280px;
+   }
+}
+@media (min-width: 1000px) {
+   .grid { grid-template-columns: repeat(2, 1fr); gap: 1rem;}
+   .window { width: 500px; iframe {
+      width: 400px;
+      height: 280px;
+  }}
  }
+ @media (min-width: 1400px) {
+    .grid { grid-template-columns: repeat(3, 1fr); gap: 1rem;}
+    .window { width: 600px; iframe {
+      width: 500px;
+      height: 280px;
+  }}
+  }
+
+
 
  .window-body {
     margin: 8px;
@@ -235,16 +238,6 @@
     height: auto;
 }
 
-
-
-#welcome {
-    position: relative;
-    left: 20px;
-    letter-spacing: 5px;
-    font-size: 60px;
-    margin: 5px;
-}
-
 .menu {
     a {
         text-decoration: none;
@@ -260,4 +253,18 @@
     border-color: #02b647;
     border-width: 3px;
     border-radius: 5px;
+}
+
+.graphic {
+   display: block;
+   position: absolute;
+
+}
+
+.graphic.id-1 {
+   background-image: url(../images/heartbeat.gif);
+   background-size:cover;
+   width: 500px;
+   height: 20px;
+   top: 480px;
 }
